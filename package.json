@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:revert": "sequelize-cli db:migrate:undo",
+    "migrations:delete": "sequelize-cli db:migrate:undo:all"
   },
   "keywords": [
     "nodejs",
@@ -23,6 +27,7 @@
     "sequelize": "^6.21.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "sequelize-cli": "^6.4.1"
   }
 }
