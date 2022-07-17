@@ -1,0 +1,17 @@
+{
+  "name": "challenge-backend-nodejs-alkemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "postgres",
+    "docker"
+  ],
+  "author": "Teobaldo Lunas",
+  "license": "ISC"
+}
