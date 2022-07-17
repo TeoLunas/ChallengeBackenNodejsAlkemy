@@ -1,7 +1,7 @@
 const { Character, CharacterSchema } = require('./characterModel');
 
-function setupModel(sequelize) {
+function setupModels(sequelize) {
     Character.init(CharacterSchema, Character.config(sequelize))
 };
 
-module.exports = setupModel;
+module.exports = setupModels;
