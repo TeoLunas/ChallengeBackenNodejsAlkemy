@@ -1,47 +1,38 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const MOVIE_TABLE = 'movies';
+const CATEGORIE_TABLE = 'categories';
 
-const MovieSchema = {
+const CategorieSchema = {
     id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
     },
-    image: {
+    name: {
         allowNull: false,
         type: DataTypes.STRING
     },
-    title: {
+    image: {
         allowNull: false,
         type: DataTypes.TEXT
     },
-    creationDate: {
+    movieID: {
         allowNull: false,
-        type: DataTypes.DATE,
-        field: 'creation_date'
-    },
-    score: {
-        allowNull: false,
-        type: DataTypes.INTEGER
-    },
-    characterID: {
-        allowNull: false,
-        field: 'character_id',
+        field: 'movie_id',
         type: DataTypes.INTEGER
     }
 };
 
-class Movie extends Model {
+class Categorie extends Model {
     static config(sequelize) {
         return {
             sequelize,
-            tableName: MOVIE_TABLE,
-            modelName: 'Movie',
+            tableName: CATEGORIE_TABLE,
+            modelName: 'Categorie',
             timestamps: false
         }
     }
 }
 
-module.exports = { Movie, MovieSchema, MOVIE_TABLE }
+module.exports = { Categorie, CategorieSchema, CATEGORIE_TABLE };

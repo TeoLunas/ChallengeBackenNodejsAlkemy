@@ -1,10 +1,8 @@
-const sequelize = require('sequelize');
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const CHARACTERTABLE = 'character';
+const CHARACTER_TABLE = 'character';
 
-const CharacterSchema = {
-
+const CharaterSchema = {
     id: {
         allowNull: false,
         autoIncrement: true,
@@ -17,42 +15,32 @@ const CharacterSchema = {
     },
     age: {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
     },
     weight: {
         allowNull: false,
-        type: DataTypes.DECIMAL
+        type: DataTypes.INTEGER
     },
     history: {
-        allowNull: type,
+        allowNull: false,
         type: DataTypes.TEXT
     },
     movieId: {
-        allowNull: type,
-        type: DataTypes.INTEGER
-    },
-    createAt: {
         allowNull: false,
         type: DataTypes.INTEGER,
-        field: 'create_at',
-        defaultValue: sequelize.NOW
+        field: 'movie_id'
     }
-
 };
 
 class Character extends Model {
     static config(sequelize) {
         return {
             sequelize,
-            tableName: CHARACTERTABLE,
-            modelName: 'Character',
-            timestamp: false
+            tableName: CHARACTER_TABLE,
+            modelName: 'Chracter',
+            timestamps: false
         }
     }
-};
-
-module.exports = {
-    CHARACTERTABLE,
-    CharacterSchema,
-    Character
 }
+
+module.exports = { Character, CharaterSchema, CHARACTER_TABLE }
